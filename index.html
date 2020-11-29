@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./lib/css/styles.css">
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <header class="header">
+      <div>
+        Patient Name:
+        <span class="banner-value" id="patient_name">..</span>
+        Gender:
+        <span class="banner-value" id="gender">..</span>
+        DOB:
+        <span class="banner-value" id="dob">..</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main-overview">
+        <div class="small-card">
+          <div>Height</div>
+          <div class="ob-value" id="height">undefined</div>
+        </div>
+        <div class="small-card">
+          <div>Weight</div>
+          <div class="ob-value" id="weight">undefined</div>
+        </div>
+        <div class="small-card">
+          <div>Sodium</div>
+          <div class="ob-value" id="sodium">undefined</div>
+        </div>
+        <div class="small-card">
+          <div></div>
+          <p>Add desired sodium levels</p>
+          <div class="ob-value" id="desiredsodium"></div>
+          <span>  <input class="annotation-box" id="annotation">
+          <button class="annotation-button" id="add">Add</button></span>
+        </div>
+
+      </div>
+
+      <div class="big-card">
+        <div class="card">
+          <div class="title">
+            Hypernatremia
+            <p>Total water deficit = </p>
+          </div>
+          <div class="ob-value" id="defWater">undefined</div>
+        </div>
+
+
+        <div class="card">
+          <div class="title">
+            Hyponatremia
+            <p>Sodium requirement = </p>
+          </div>
+          <div class="ob-value" id="nareq">undefined</div>
+        </div>
+
+        <div class="card">
+          <div class="title">
+
+            <button class="diagnosis-button" id="diagButton">See Diagnosis</button></span>
+
+            <li id="hyper">No diagnosis</li>
+
+          </div>
+          <ul id="diag"></ul>
+        </div>
+
+        <div class="card">
+          <div class="title">
+            Notes
+            <ul>
+              <li>Total body water = 0.5 * body weight </li>
+              <li>Total water deficit = total body water * (1 -desired Na+/serum Na+) </li>
+              <li>Sodium requirement = total body water * (desired Na+ - serum Na+) </li>
+              <li>Desired sodium requirement used : 140 mEq/L</li>
+
+            </ul>
+
+
+          </div>
+          <ul id="notes"></ul>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src='./lib/js/fhir-client.js'></script>
+  <script src="./lib/js/get-data.js"></script>
+
+  <!-- uncomment below script and comment above script to switch for easy local testing -->
+  <!-- <script src="./lib/js/get-data-test.js"></script> -->
+</body>
+
+</html>
